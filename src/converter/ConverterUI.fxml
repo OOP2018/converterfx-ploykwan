@@ -2,22 +2,18 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.FlowPane?>
 
-<FlowPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="converter.ConventerController">
+<FlowPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="converter.ConventerController">
    <children>
-      <TextField id="textfield1" alignment="CENTER" />
-      <Label alignment="CENTER" text="Mile =">
-         <FlowPane.margin>
-            <Insets />
-         </FlowPane.margin>
-      </Label>
-      <TextField id="textfield2" alignment="CENTER" />
-      <Label alignment="CENTER" text="Kilometer" />
-      <Button id="convertButton" alignment="CENTER" mnemonicParsing="false" text="Convert" />
-      <Button id="clearButton" alignment="CENTER" mnemonicParsing="false" text="Clear" />
+      <TextField id="textfield1" fx:id="textfield1" alignment="CENTER" />
+      <ComboBox id="unit1" fx:id="unitbox1" prefWidth="150.0" />
+      <TextField id="textfield2" fx:id="textfield2" alignment="CENTER" />
+      <ComboBox id="unit2" fx:id="unitbox2" prefWidth="150.0" />
+      <Button id="convertButton" fx:id="convertButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleConvert" text="Convert" />
+      <Button id="clearButton" fx:id="clearButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleClear" text="Clear" />
    </children>
    <padding>
       <Insets left="10.0" top="10.0" />
