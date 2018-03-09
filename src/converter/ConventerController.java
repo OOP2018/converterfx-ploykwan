@@ -59,24 +59,32 @@ public class ConventerController {
 		Length unit1 = unitbox1.getValue();
 		Length unit2 = unitbox2.getValue();
 		
-		if (text1 != null && text2.isEmpty()) {
+		if (!text1.equals("")) {
 			try {
+				textfield1.setStyle("-fx-text-fill: black;");
+				textfield2.setStyle("-fx-text-fill: black;");
 				double num = Double.parseDouble(text1);
-				double answer = (unit2.getValue() / unit1.getValue()) * num;
-				textfield2.setText(answer+"");
+				double answer = (unit1.getValue() / unit2.getValue()) * num;
+				textfield2.setText(String.format("%.4g",answer));
 				System.out.printf("%.4g %s = %.4g %s\n",num,unit1,answer,unit2);
 			} catch (NumberFormatException ex) {
+				textfield2.clear();
 				textfield1.setText("invalid number.");
+				textfield1.setStyle("-fx-text-fill: red;");
 				System.out.println("invalid number.");
 			}
-		} else if (text2 != null && text1.isEmpty()) {
+		} else if (!text2.equals("")) {
 			try {
+				textfield1.setStyle("-fx-text-fill: black;");
+				textfield2.setStyle("-fx-text-fill: black;");
 				double num = Double.parseDouble(text2);
-				double answer = (unit1.getValue() / unit2.getValue() ) * num;
-				textfield1.setText(answer+"");
+				double answer = (unit2.getValue() / unit1.getValue() ) * num;
+				textfield1.setText(String.format("%.4g",answer));
 				System.out.printf("%.4g %s = %.4g %s\n",num,unit2,answer,unit1);
 			} catch (NumberFormatException ex) {
+				textfield1.clear();
 				textfield2.setText("invalid number.");
+				textfield2.setStyle("-fx-text-fill: red;");
 				System.out.println("invalid number.");
 			}
 		}
@@ -87,8 +95,8 @@ public class ConventerController {
 	 * @param event happened when user click clear button.
 	 */
 	public void handleClear(ActionEvent event) {
-		textfield1.setText(null);
-		textfield2.setText(null);
+		textfield1.setStyle("-fx-text-fill: black;");
+		textfield2.setStyle("-fx-text-fill: black;");
 		textfield1.clear();
 		textfield2.clear();
 	}

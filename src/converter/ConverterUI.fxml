@@ -8,9 +8,9 @@
 
 <FlowPane hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="converter.ConventerController">
    <children>
-      <TextField id="textfield1" fx:id="textfield1" alignment="CENTER" />
+      <TextField id="textfield1" fx:id="textfield1" alignment="CENTER" onAction="#handleConvert" />
       <ComboBox id="unit1" fx:id="unitbox1" prefWidth="150.0" />
-      <TextField id="textfield2" fx:id="textfield2" alignment="CENTER" />
+      <TextField id="textfield2" fx:id="textfield2" alignment="CENTER" onAction="#handleConvert" />
       <ComboBox id="unit2" fx:id="unitbox2" prefWidth="150.0" />
       <Button id="convertButton" fx:id="convertButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleConvert" text="Convert" />
       <Button id="clearButton" fx:id="clearButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleClear" text="Clear" />
